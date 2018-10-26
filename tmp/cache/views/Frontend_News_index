@@ -1,0 +1,51 @@
+1541142896
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Liste des 5 dernières news    </title>
+    
+    <meta charset="utf-8" />
+    
+    <link rel="stylesheet" href="/css/Envision.css" type="text/css" />
+  </head>
+  
+  <body>
+    <div id="wrap">
+      <header>
+        <h1><a href="/">Mon super site</a></h1>
+        <p>Comment ça, il n'y a presque rien ?</p>
+      </header>
+      
+      <nav>
+        <ul>
+          <li><a href="/">Accueil</a></li>
+                    <li><a href="/admin/">Admin</a></li>
+          <li><a href="/admin/news-insert.html">Ajouter une news</a></li>
+                  </ul>
+      </nav>
+      
+      <div id="content-wrap">
+        <section id="main">
+                    
+            <h2><a href="news-15.html">pas mal</a></h2>
+  <p>:)e pense que tout fonctionne bien, il y a peut être des choses à optimiser mais j'ai appris beaucoup de chose lors de ce tp, bcp de fonction que je ne connaissais pas encore.un bon travail de...</p>
+  <h2><a href="news-6.html">histoire 5</a></h2>
+  <p>Un homme d'affaire américain prend l'avion pour aller jouer à la roulette pendant le week-end à Las Vegas.<br />
+Il perd sa chemise le samedi soir et n'a plus que cinq cents en poche et son billet de...</p>
+  <h2><a href="news-5.html">histoire4</a></h2>
+  <p>Au cours d'une discussion dans un bar, un gars lance à la cantonade :<br />
+- Hé ben moi les gars, je connais tout le monde sur la planète personnellement et je suis prêt à tenir un pari pour 50 000...</p>
+  <h2><a href="news-4.html">histoire 3</a></h2>
+  <p>Ce sont des touristes britanniques qui ont décidé de revenir passer leurs vacances en Corse.<br />
+Les britanniques sont vaccinés contre les attentats ayant affaire depuis quelques décennies aux...</p>
+  <h2><a href="news-3.html">histoire 2</a></h2>
+  <p>Une dame a acheté une armoire chez Ikea et a décidé de la monter toute seule, sans attendre son mari.<br />
+Elle regarde bien le plan et se met à l'ouvrage. Voilà, c'est fait. Mais en bas, dans la...</p>
+        </section>
+      </div>
+    
+      <footer></footer>
+    </div>
+  </body>
+</html>
