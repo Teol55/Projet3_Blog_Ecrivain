@@ -8,21 +8,47 @@ abstract class BackController extends ApplicationComponent
   protected $page = null;
   protected $view = '';
   protected $managers = null;
-  
+  protected $cache = null;
+
   public function __construct(Application $app, $module, $action)
   {
     parent::__construct($app);
-    
-    $this->managers = new Managers('PDO', PDOFactory::getMysqlConnexion());
+
+    $this->managers = new Managers('PDO', PDOFactory::getMysqlConnexion(), new CacheDatas());
     $this->page = new Page($app);
-    
+
     $this->setModule($module);
     $this->setAction($action);
     $this->setView($action);
+
+    // On récupère les pages à mettre en cache
+    $pagesCache = $this->createCache();
+    if (($pagesCache !== null) && isset($pagesCache[$action]))
+      $this->cache = new CacheViews($app->name(), $module, $action, $pagesCache[$action]);
   }
-    
+
+  public function createCache()
+  {
+    return null;
+  }
+
+  public function getFromCache()
+  {
+    if ($this->cache)
+      return $this->cache->getPageFromCache();
+
+    return null;
+  }
+
+  public function setToCache($content)
+  {
+    if ($this->cache)
+      $this->cache->setPageToCache($content);
+  }
+
   public function execute()
   {
+    // On commence par regarder si on a la page en cache
     $method = 'execute'.ucfirst($this->action);
 
     if (!is_callable([$this, $method]))
@@ -64,9 +90,9 @@ abstract class BackController extends ApplicationComponent
     {
       throw new \InvalidArgumentException('La vue doit être une chaine de caractères valide');
     }
-    
+
     $this->view = $view;
-    
+
     $this->page->setContentFile(__DIR__.'/../../App/'.$this->app->name().'/Modules/'.$this->module.'/Views/'.$this->view.'.php');
   }
 }
