@@ -44,7 +44,7 @@
                     </li>
                     <li><a href="/">Accueil</a>
                     </li>
-                    <li><a href="news-3.html">Billet Simple pour l'Alaska</a>
+                    <li><a href="news-1.html">Billet Simple pour l'Alaska</a>
                     </li>
                     <?php if ($user->isAuthenticated()) { ?>
                     <li><a href="/admin/">Admin</a></li>

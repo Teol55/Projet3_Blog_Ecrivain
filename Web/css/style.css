@@ -51,6 +51,10 @@ h1 {
     text-align: center;
 }
 
+#presentation2 {
+    text-align: left;
+}
+
 a:active,
 a:focus {
     outline: none;
@@ -61,7 +65,7 @@ a:focus {
 }
 
 #carousel {
-    height: 500px;
+    height: 400px;
 }
 
 em {

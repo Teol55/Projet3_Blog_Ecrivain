@@ -51,7 +51,8 @@ class NewsController extends BackController
     {
       $this->app->httpResponse()->redirect404();
     }
-    
+    $listAll= $this->managers->getManagerof('news')->getAll();
+    $this->page->addVar('listAll',$listAll);
     $this->page->addVar('title', $news->titre());
     $this->page->addVar('news', $news);
     $this->page->addVar('comments', $this->managers->getManagerOf('Comments')->getListOf($news->id()));

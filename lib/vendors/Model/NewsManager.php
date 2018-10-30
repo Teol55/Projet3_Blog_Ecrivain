@@ -66,4 +66,9 @@ abstract class NewsManager extends Manager
    * @return void
    */
   abstract protected function modify(News $news);
+
+    /**
+    *Méthode permettant de retourner toutes les news
+    */
+ abstract protected function getAll();
 }

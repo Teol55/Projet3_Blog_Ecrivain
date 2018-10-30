@@ -5,32 +5,33 @@ use \OCFram\Entity;
 
 class News extends Entity
 {
-  protected $auteur,
+  protected $chapitre,
             $titre,
             $contenu,
             $dateAjout,
-            $dateModif;
+            $dateModif,
+            $image;
 
-  const AUTEUR_INVALIDE = 1;
+  const CHAPITRE_INVALIDE = 1;
   const TITRE_INVALIDE = 2;
   const CONTENU_INVALIDE = 3;
 
   public function isValid()
   {
-    return !(empty($this->auteur) || empty($this->titre) || empty($this->contenu));
+    return !(empty($this->chapitre) || empty($this->titre) || empty($this->contenu) || empty($this->image));
   }
 
 
   // SETTERS //
 
-  public function setAuteur($auteur)
+  public function setAuteur($chapitre)
   {
-    if (!is_string($auteur) || empty($auteur))
+    if (!is_string($chapitre) || empty($chapitre))
     {
-      $this->erreurs[] = self::AUTEUR_INVALIDE;
+      $this->erreurs[] = self::CHAPITRE_INVALIDE;
     }
 
-    $this->auteur = $auteur;
+    $this->chapitre = $chapitre;
   }
 
   public function setTitre($titre)
@@ -63,11 +64,15 @@ class News extends Entity
     $this->dateModif = $dateModif;
   }
 
+public function setImage($image)
+{
+    $this->image=$image;
+}
   // GETTERS //
 
-  public function auteur()
+  public function chapitre()
   {
-    return $this->auteur;
+    return $this->chapitre;
   }
 
   public function titre()
@@ -88,5 +93,9 @@ class News extends Entity
   public function dateModif()
   {
     return $this->dateModif;
+  }
+  public function image()
+  {
+        return $this->image;
   }
 }

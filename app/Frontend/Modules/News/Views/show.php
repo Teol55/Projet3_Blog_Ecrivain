@@ -1,7 +1,30 @@
 <div class="container">
 
+    <div class="cont_1 row">
+
+        <div class="col-lg-6" id="presentation">
+            <img src="images/image-<?= $news['id'] ?>.jpg" alt="Billet simple pour l'Alaska">
+        </div>
+        <div class="col-lg-6" id="presentation2">
+            <?php
+    foreach ($listAll as $listAlls) { ?>
+
+                <?=  $listAlls['chapitre'];?> :
+                    <a href="news-<?= $listAlls['id'] ?>.html">
+                        <?= $listAlls['titre'] ?>
+                    </a><br><br>
+                    <?php } ?>
+        </div>
+    </div>
+
+
+
+
+
     <div class="jumbotron row" id="Roman">
-        <p>Par <em><?= $news['auteur'] ?></em>, le
+
+        <p><em><?= $news['chapitre'] ?>
+            </em>, le
             <?= $news['dateAjout']->format('d/m/Y à H\hi') ?>
         </p>
         <h2>
@@ -23,31 +46,33 @@ if (empty($comments))
 ?>
             <p>Aucun commentaire n'a encore été posté. Soyez le premier à en laisser un !</p>
             <?php
-}
-
+} ?>
+                <ul class="media-list col-lg-7">
+                    <?php
 foreach ($comments as $comment)
 {
 ?>
-                <fieldset>
-                    <legend>
-                        Posté par <strong><?= htmlspecialchars($comment['auteur']) ?></strong> le
-                        <?= $comment['date']->format('d/m/Y à H\hi') ?>
-                            <br>
-                            <a href="comment-signal-<?= $comment['id'] ?>.html">Signaler</a>
+                        <li class="media thumbnail">
+                            <legend>
+                                Posté par <strong><?= htmlspecialchars($comment['auteur']) ?></strong> le
+                                <?= $comment['date']->format('d/m/Y à H\hi') ?>
+                                    <br>
+                                    <a href="comment-signal-<?= $comment['id'] ?>.html">Signaler</a>
 
-                            <?php if ($user->isAuthenticated()) { ?> -
-                            <a href="admin/comment-update-<?= $comment['id'] ?>.html">Modifier</a>
-                            <a href="admin/comment-delete-<?= $comment['id'] ?>.html">Supprimer</a>
-                            <?php } ?>
-                    </legend>
-                    <p>
-                        <?= nl2br(htmlspecialchars($comment['contenu'])) ?>
-                    </p>
-                </fieldset>
-                <?php
+                                    <?php if ($user->isAuthenticated()) { ?> -
+                                    <a href="admin/comment-update-<?= $comment['id'] ?>.html">Modifier</a>
+                                    <a href="admin/comment-delete-<?= $comment['id'] ?>.html">Supprimer</a>
+                                    <?php } ?>
+                            </legend>
+                            <p>
+                                <?= nl2br(htmlspecialchars($comment['contenu'])) ?>
+                            </p>
+                        </li>
+                        <?php
 }
 ?>
 
+                </ul><br>
                 <p><a href="commenter-<?= $news['id'] ?>.html">Ajouter un commentaire</a></p>
     </div>
 </div>
