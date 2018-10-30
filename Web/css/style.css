@@ -1,0 +1,69 @@
+body {
+    background: url('../images/fondAlaska.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    font-family: "roboto";
+}
+
+header {
+    padding: 25px;
+}
+
+/* Images */
+
+img {
+    width: 100%;
+}
+
+#imgtof {
+
+    height: 35%;
+    width: 35%;
+    border-radius: 20%;
+    border: ridge 10px;
+}
+
+h1 {
+    font-family: 'Shadows Into Light', cursive;
+    padding: 5px;
+}
+
+.jumbotron p {
+    text-align: left;
+    font-family: Times New Roman;
+    font-size: auto;
+
+}
+
+.jumbotron {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+
+
+.cont_1 {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+#presentation {
+    text-align: center;
+}
+
+a:active,
+a:focus {
+    outline: none;
+}
+
+.texte:hover {
+    background-color: rgba(225, 228, 224, 0.5);
+}
+
+#carousel {
+    height: 500px;
+}
+
+em {
+    color: dodgerblue;
+}

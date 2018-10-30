@@ -17,15 +17,13 @@ class FrontendApplication extends Application
     $controller = $this->getController();
     $content = $controller->getFromCache();
 
-    if ($content === null)
-    {
+   
       $controller->execute();
 
       $this->httpResponse->setPage($controller->page());
       $content = $this->httpResponse->send();
       $controller->setToCache($content);
       exit();
-    }
-    $this->httpResponse->sendContent($content);
+   
   }
 }
