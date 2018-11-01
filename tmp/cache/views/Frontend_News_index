@@ -1,4 +1,4 @@
-1541661974
+1541664673
 <!DOCTYPE html>
 <html>
 
@@ -46,6 +46,8 @@
                     </li>
                     <li><a href="news-1.html">Billet Simple pour l'Alaska</a>
                     </li>
+                                        <li><a href="/admin/">Admin</a></li>
+                    <li><a href="/admin/news-insert.html">Ajouter une news</a></li>
                                     </ul>
             </div>
         </nav>
@@ -131,7 +133,7 @@
                 <div class="panel panel-info">
                     <div class="panel-heading">
 
-                        <h3 class="panel-title"> <a href="#exp17" data-parent="#monaccordeon" data-toggle="collapse"><strong><a href="news-17.html">Un peu d'humour</a></strong> <br> <em>Publié le :31/10/2018 à 16h27 </em></a>
+                        <h3 class="panel-title"> <a href="#exp7" data-parent="#monaccordeon" data-toggle="collapse"><strong><a href="news-7.html">Un peu d'humour</a></strong> <br> <em>Publié le :31/10/2018 à 16h27 </em></a>
                         </h3>
                     </div>
                     <div id="exp1" class="panel-collapse collapse in ">
@@ -147,13 +149,14 @@
                 <div class="panel panel-info">
                     <div class="panel-heading">
 
-                        <h3 class="panel-title"> <a href="#exp6" data-parent="#monaccordeon" data-toggle="collapse"><strong><a href="news-6.html">Les Chiens</a></strong> <br> <em>Publié le :03/05/2018 à 13h43 </em></a>
+                        <h3 class="panel-title"> <a href="#exp6" data-parent="#monaccordeon" data-toggle="collapse"><strong><a href="news-6.html">Les chiens</a></strong> <br> <em>Publié le :01/11/2018 à 09h09 </em></a>
                         </h3>
                     </div>
                     <div id="exp1" class="panel-collapse collapse in ">
                         <div class="panel-body">
                             <p>
-                                :)e pense que tout fonctionne bien, il y a peut être des choses à optimiser mais j'ai appris beaucoup de chose lors de ce tp, bcp de fonction que je ne connaissais pas encore.un bon travail de...                            </p>
+                                <div id="TheTexte" class="Texte" lang="zxx"><br />
+<p>Et eodem impetu Domitianum praecipitem per scalas itidem funibus constrinxerunt, eosque coniunctos per ampla spatia civitatis acri raptavere discursu....                            </p>
                         </div>
                     </div>
 
