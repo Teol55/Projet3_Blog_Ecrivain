@@ -103,7 +103,7 @@ class NewsManagerPDO extends NewsManager
         return $news;
     }
 
-    $requete = $this->dao->prepare('SELECT id, chapitre, titre, contenu, dateAjout, dateModif, Image FROM news WHERE id = :id');
+    $requete = $this->dao->prepare('SELECT id, chapitre, titre, contenu, dateAjout, dateModif, image FROM news WHERE id = :id');
     $requete->bindValue(':id', (int) $id, \PDO::PARAM_INT);
     $requete->execute();
     
@@ -129,7 +129,7 @@ class NewsManagerPDO extends NewsManager
     $requete = $this->dao->prepare('UPDATE news SET chapitre = :chapitre, titre = :titre, contenu = :contenu, dateModif = NOW() WHERE id = :id');
     
     $requete->bindValue(':titre', $news->titre());
-    $requete->bindValue(':chapitre', $news->auteur());
+    $requete->bindValue(':chapitre', $news->chapitre());
     $requete->bindValue(':contenu', $news->contenu());
     $requete->bindValue(':id', $news->id(), \PDO::PARAM_INT);
     

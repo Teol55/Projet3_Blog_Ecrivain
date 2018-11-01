@@ -1,3 +1,4 @@
 app.xml
 routes.xml
 PDOFactory.php
+/tmp/*

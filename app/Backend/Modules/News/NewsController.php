@@ -95,7 +95,7 @@ class NewsController extends BackController
     if ($request->method() == 'POST')
     {
       $news = new News([
-        'auteur' => $request->postData('auteur'),
+        'chapitre' => $request->postData('chapitre'),
         'titre' => $request->postData('titre'),
         'contenu' => $request->postData('contenu')
       ]);

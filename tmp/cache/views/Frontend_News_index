@@ -1,4 +1,4 @@
-1541515011
+1541661974
 <!DOCTYPE html>
 <html>
 
@@ -131,6 +131,22 @@
                 <div class="panel panel-info">
                     <div class="panel-heading">
 
+                        <h3 class="panel-title"> <a href="#exp17" data-parent="#monaccordeon" data-toggle="collapse"><strong><a href="news-17.html">Un peu d'humour</a></strong> <br> <em>Publié le :31/10/2018 à 16h27 </em></a>
+                        </h3>
+                    </div>
+                    <div id="exp1" class="panel-collapse collapse in ">
+                        <div class="panel-body">
+                            <p>
+                                <div id="TheTexte" class="Texte" lang="zxx"><br />
+<p>Dum apud Persas, ut supra narravimus, perfidia regis motus agitat insperatos, et in eois tractibus bella rediviva consurgunt, anno sexto decimo et eo...                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+
                         <h3 class="panel-title"> <a href="#exp6" data-parent="#monaccordeon" data-toggle="collapse"><strong><a href="news-6.html">Les Chiens</a></strong> <br> <em>Publié le :03/05/2018 à 13h43 </em></a>
                         </h3>
                     </div>
@@ -191,22 +207,6 @@ Les britanniques sont vaccinés contre les attentats ayant affaire depuis quelqu
 
                 </div>
                 
-                <div class="panel panel-info">
-                    <div class="panel-heading">
-
-                        <h3 class="panel-title"> <a href="#exp2" data-parent="#monaccordeon" data-toggle="collapse"><strong><a href="news-2.html">Histoire d'un r�ve</a></strong> <br> <em>Publié le :13/04/2018 à 16h27 </em></a>
-                        </h3>
-                    </div>
-                    <div id="exp1" class="panel-collapse collapse in ">
-                        <div class="panel-body">
-                            <p>
-                                ourant, allongé sur le lit dans sa chambre, un vieillard distingue une merveilleuse odeur de tarte aux pommes provenant de la cuisine...<br />
-Il demanda a son petit fils : "Petit, va donc me chercher...                            </p>
-                        </div>
-                    </div>
-
-                </div>
-                
         </div>
     </div>
 </div>
@@ -219,6 +219,13 @@ Il demanda a son petit fils : "Petit, va donc me chercher...                    
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <!-- Javascript de Bootstrap -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+        <script>
+            tinymce.init({
+                selector: '.mytextarea'
+            });
+
+        </script>
 
 
 </body>

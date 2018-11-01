@@ -18,13 +18,13 @@ class News extends Entity
 
   public function isValid()
   {
-    return !(empty($this->chapitre) || empty($this->titre) || empty($this->contenu) || empty($this->image));
+    return !(empty($this->chapitre) || empty($this->titre) || empty($this->contenu));
   }
 
 
   // SETTERS //
 
-  public function setAuteur($chapitre)
+  public function setChapitre($chapitre)
   {
     if (!is_string($chapitre) || empty($chapitre))
     {
