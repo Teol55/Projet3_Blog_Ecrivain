@@ -126,12 +126,21 @@ class CommentsManagerPDO extends CommentsManager
 
   public function get($id)
   {
-    $q = $this->dao->prepare('SELECT id, news, auteur, contenu FROM comments WHERE id = :id');
+    $q = $this->dao->prepare('SELECT id, news, auteur, signalement contenu FROM comments WHERE id = :id');
     $q->bindValue(':id', (int) $id, \PDO::PARAM_INT);
     $q->execute();
     
     $q->setFetchMode(\PDO::FETCH_CLASS | \PDO::FETCH_PROPS_LATE, '\Entity\Comment');
     
     return $q->fetch();
+  }
+ public function signal($id)
+  {
+    $q = $this->dao->prepare('UPDATE comments SET  signalement = :signalement WHERE id = :id');
+    
+    $q->bindValue(':signalement', true);
+    $q->bindValue(':id', $id, \PDO::PARAM_INT);
+    
+    $q->execute();
   }
 }
