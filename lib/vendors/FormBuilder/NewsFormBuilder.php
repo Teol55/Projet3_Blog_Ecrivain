@@ -12,7 +12,7 @@ class NewsFormBuilder extends FormBuilder
   public function build()
   {
     $this->form->add(new StringField([
-        'label' => 'Chapitre',
+        'label' => 'Chapitre :',
         'name' => 'chapitre',
         'maxLength' => 20,
         'validators' => [
@@ -21,7 +21,7 @@ class NewsFormBuilder extends FormBuilder
         ],
        ]))
        ->add(new StringField([
-        'label' => 'Titre',
+        'label' => 'Titre: ',
         'name' => 'titre',
         'maxLength' => 100,
         'validators' => [

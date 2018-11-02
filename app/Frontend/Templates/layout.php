@@ -47,10 +47,24 @@
                     <li><a href="news-1.html">Billet Simple pour l'Alaska</a>
                     </li>
                     <?php if ($user->isAuthenticated()) { ?>
-                    <li><a href="/admin/">Admin</a></li>
-                    <li><a href="/admin/news-insert.html">Ajouter une news</a></li>
-                    <?php } ?>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Admin<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <li><a href="/admin/">listes des Chapitres</a></li>
+                                <li><a href="/admin/news-insert.html">Ajouter un Chapitre</a></li>
+                                <li><a href="/admin/news-insert.html">Commentaires</a></li>
+
+                        </ul>
+                        </li>
+
+
+
+
                 </ul>
+                <?php } ?>
+
             </div>
         </nav>
     </header>
@@ -75,13 +89,15 @@
         <!-- Javascript de Bootstrap -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
         <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+        <script src="/web/js/tinymce/tinymce.min.js"></script>
         <script>
             tinymce.init({
-                selector: '.mytextarea'
+                selector: '.mytextarea',
+                language: 'fr_FR',
+                directionality: 'rtl'
             });
 
         </script>
-
 
 </body>
 

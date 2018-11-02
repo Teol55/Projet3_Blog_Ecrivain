@@ -1,4 +1,4 @@
-1541664673
+1541746282
 <!DOCTYPE html>
 <html>
 
@@ -46,9 +46,7 @@
                     </li>
                     <li><a href="news-1.html">Billet Simple pour l'Alaska</a>
                     </li>
-                                        <li><a href="/admin/">Admin</a></li>
-                    <li><a href="/admin/news-insert.html">Ajouter une news</a></li>
-                                    </ul>
+                    
             </div>
         </nav>
     </header>
@@ -222,14 +220,15 @@ Les britanniques sont vaccinés contre les attentats ayant affaire depuis quelqu
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <!-- Javascript de Bootstrap -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-        <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+        <script src="/web/js/tinymce/tinymce.min.js"></script>
         <script>
             tinymce.init({
-                selector: '.mytextarea'
+                selector: '.mytextarea',
+                language: 'fr_FR',
+                directionality: 'rtl'
             });
 
         </script>
-
 
 </body>
 
