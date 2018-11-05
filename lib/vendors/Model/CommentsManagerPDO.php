@@ -126,7 +126,7 @@ class CommentsManagerPDO extends CommentsManager
 
   public function get($id)
   {
-    $q = $this->dao->prepare('SELECT id, news, auteur, signalement contenu FROM comments WHERE id = :id');
+    $q = $this->dao->prepare('SELECT id, news, auteur, signalement, contenu FROM comments WHERE id = :id');
     $q->bindValue(':id', (int) $id, \PDO::PARAM_INT);
     $q->execute();
     
@@ -142,5 +142,25 @@ class CommentsManagerPDO extends CommentsManager
     $q->bindValue(':id', $id, \PDO::PARAM_INT);
     
     $q->execute();
+  }
+    public function getAllComment()
+  {
+    $sql = 'SELECT id, news, auteur, contenu, date, signalement FROM comments ORDER BY date ASC';
+    
+       
+    $requete = $this->dao->query($sql);
+    $requete->setFetchMode(\PDO::FETCH_CLASS | \PDO::FETCH_PROPS_LATE, '\Entity\comment');
+    
+    $listeAllComments = $requete->fetchAll();
+    
+    foreach ($listeAllComments as $comments)
+    {
+      $comments->setDate(new \DateTime($comments->date()));
+      
+    }
+    
+    $requete->closeCursor();
+    
+    return $listeAllComments;
   }
 }

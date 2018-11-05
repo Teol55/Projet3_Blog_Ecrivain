@@ -44,7 +44,9 @@
                     </li>
                     <li><a href="/">Accueil</a>
                     </li>
+                    <?php if (!$user->isAuthenticated()) {  ?>
                     <li><a href="news-1.html">Billet Simple pour l'Alaska</a>
+                        <?php } ?>
                     </li>
                     <?php if ($user->isAuthenticated()) { ?>
 
@@ -54,7 +56,7 @@
                             <li>
                                 <li><a href="/admin/">listes des Chapitres</a></li>
                                 <li><a href="/admin/news-insert.html">Ajouter un Chapitre</a></li>
-                                <li><a href="/admin/news-insert.html">Commentaires</a></li>
+                                <li><a href="/admin/comment-list.html">Commentaires</a></li>
 
                         </ul>
                         </li>

@@ -137,4 +137,35 @@ class NewsManagerPDO extends NewsManager
 
     $this->deleteCache($news->id());
   }
+    public function getNewsComment()
+    {
+         $sql ='SELECT news.id as idNews, news.chapitre as chapitre , news.titre as titre,c.id as idComment, c.auteur as auteur,c. contenu as contenu, c.news as newsId, c.date as date, c.signalement as signalement FROM news LEFT JOIN comments as c ON news.id =c.news ORDER BY chapitre ';
+        
+        
+        
+    $requete = $this->dao->query($sql);
+    
+    
+    $listeAllNews = $requete->fetchAll();
+        
+    foreach($listeAllNews as $listComment)
+            {
+                $listAllComments=array(
+                "news" =>array(
+                        "idNews=>" => $listComment['idNews'],
+                        "chapitre"=>$listComment['chapitre'],
+                        "titre"=>$listComment['titre']),
+                "comments"=>array(
+                    "idComment" => $listComment['idComment'],
+                    "auteur" => $listComment['auteur'],
+                    "contenu" => $listComment['contenu'],
+                    "newsId" => $listComment['newsId'],
+                    "dats" => $listComment['date'],
+                    "signalement" => $listComment['signalement']));
+            }
+    
+    return $listAllComments; 
+        
+    }
+
 }

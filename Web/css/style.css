@@ -83,3 +83,7 @@ img.float-right {
 img.float-left {
     margin: 5px 10px 10px 0px;
 }
+
+.signalement {
+    background-color: crimson;
+}

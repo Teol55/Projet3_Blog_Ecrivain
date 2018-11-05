@@ -29,7 +29,7 @@ class NewsController extends BackController
     
     $this->app->user()->setFlash('Le commentaire a bien été supprimé !');
     
-    $this->app->httpResponse()->redirect('.');
+    $this->app->httpResponse()->redirect('/admin/comment-list.html');
   }
 
   public function executeIndex(HTTPRequest $request)
@@ -134,4 +134,17 @@ class NewsController extends BackController
 
     $this->page->addVar('form', $form->createView());
   }
+    public function executeListComment(HTTPRequest $request)
+    {
+        $this->page->addVar('title', 'Gestion des commentaires');
+        
+        $manager = $this->managers->getManagerOf('News');
+        
+        $this->page->addVar('listNews', $manager->getAll());
+        
+         $manager = $this->managers->getManagerOf('Comments');
+       
+        $this->page->addVar('listComments', $manager->getAllComment()); 
+
+    }
 }

@@ -68,7 +68,11 @@ abstract class NewsManager extends Manager
   abstract protected function modify(News $news);
 
     /**
-    *Méthode permettant de retourner toutes les news
+    *Méthode permettant de retourner toutes les Chapitres
     */
  abstract protected function getAll();
-}
+    
+    /**
+    *Methode permettant une jointure externe entre News et commentaire
+    */
+ abstract public function getNewsComment(); }
