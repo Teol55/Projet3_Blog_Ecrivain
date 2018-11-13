@@ -14,5 +14,7 @@ trait Hydrator
         $this->$method($value);
       }
     }
+   
+
   }
 }

@@ -74,13 +74,13 @@ foreach ($listeNews as $news)
                 <div class="panel panel-info">
                     <div class="panel-heading">
 
-                        <h3 class="panel-title"> <a href="#exp<?= $news['id'] ?>" data-parent="#monaccordeon" data-toggle="collapse"><strong><a href="news-<?= $news['id'] ?>.html"><?= $news['titre'] ?></a></strong> <br> <em>Publié le :<?= $news['dateAjout']->format('d/m/Y à H\hi') ?> </em></a>
+                        <h3 class="panel-title"> <a href="#exp<?= $news->id()?>" data-parent="#monaccordeon" data-toggle="collapse"><strong><a href="news-<?= $news->id() ?>.html"><?= $news->titre()?></a></strong> <br> <em>Publié le :<?= $news->dateAjout()->format('d/m/Y à H\hi') ?> </em></a>
                         </h3>
                     </div>
                     <div id="exp1" class="panel-collapse collapse in ">
                         <div class="panel-body">
                             <p>
-                                <?= nl2br($news['contenu']) ?>
+                                <?= nl2br($news->contenu()) ?>
                             </p>
                         </div>
                     </div>

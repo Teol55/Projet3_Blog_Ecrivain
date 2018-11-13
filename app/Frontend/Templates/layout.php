@@ -91,7 +91,8 @@
         <!-- Javascript de Bootstrap -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
         <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-        <script src="/web/js/tinymce/tinymce.min.js"></script>
+
+
         <script>
             tinymce.init({
                 selector: '.mytextarea',

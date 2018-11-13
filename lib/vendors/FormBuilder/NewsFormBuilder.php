@@ -4,6 +4,7 @@ namespace FormBuilder;
 use \OCFram\FormBuilder;
 use \OCFram\StringField;
 use \OCFram\TextField;
+use \OCFram\UploadFileField;
 use \OCFram\MaxLengthValidator;
 use \OCFram\NotNullValidator;
 
@@ -29,6 +30,16 @@ class NewsFormBuilder extends FormBuilder
           new NotNullValidator('Merci de spécifier le titre du chapitre'),
         ],
        ]))
+         ->add(new UploadFileField([
+        'label' => 'Image:',
+        'name' => 'image',
+        'enctype' => 'multipart/from-data',
+        'size' => 300000,
+        'type' => 'file',
+        'validators' => [
+         ('Merci de spécifier le contenu du FICHIER'),
+        ],
+       ]))
        ->add(new TextField([
         'label' => 'Contenu',
         'classe'=>'mytextarea',
@@ -38,6 +49,7 @@ class NewsFormBuilder extends FormBuilder
         'validators' => [
           new NotNullValidator('Merci de spécifier le contenu du chpitre'),
         ],
-       ]));
+       ]))
+        ;
   }
 }

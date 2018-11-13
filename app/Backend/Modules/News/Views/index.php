@@ -20,7 +20,7 @@
                 <?php
 foreach ($listeNews as $news)
 {
-  echo '<tr><td>', $news['chapitre'], '</td><td>', $news['titre'], '</td><td>le ', $news['dateAjout']->format('d/m/Y à H\hi'), '</td><td>', ($news['dateAjout'] == $news['dateModif'] ? '-' : 'le '.$news['dateModif']->format('d/m/Y à H\hi')), '</td><td><a href="news-update-', $news['id'], '.html"><i class="fa fa-pencil"></i></a><a href="news-delete-', $news['id'], '.html"><i class="fa fa-trash"></i></a></td></tr>', "\n";
+  echo '<tr><td>', $news->chapitre(), '</td><td>', $news->titre(), '</td><td>le ', $news->dateAjout()->format('d/m/Y à H\hi'), '</td><td>', ($news->dateAjout() == $news->dateModif() ? '-' : 'le '.$news->dateModif()->format('d/m/Y à H\hi')), '</td><td><a href="news-update-', $news->id(), '.html"><i class="fa fa-pencil"></i></a><a href="news-delete-', $news->id(), '.html"><i class="fa fa-trash"></i></a></td></tr>', "\n";
 }
 ?>
 

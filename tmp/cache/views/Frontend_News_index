@@ -1,4 +1,4 @@
-1542009466
+1542699983
 <!DOCTYPE html>
 <html>
 
@@ -44,24 +44,9 @@
                     </li>
                     <li><a href="/">Accueil</a>
                     </li>
-                                        </li>
+                                        <li><a href="news-1.html">Billet Simple pour l'Alaska</a>
+                                            </li>
                     
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Admin<span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li>
-                                <li><a href="/admin/">listes des Chapitres</a></li>
-                                <li><a href="/admin/news-insert.html">Ajouter un Chapitre</a></li>
-                                <li><a href="/admin/comment-list.html">Commentaires</a></li>
-
-                        </ul>
-                        </li>
-
-
-
-
-                </ul>
-                
             </div>
         </nav>
     </header>
@@ -146,6 +131,36 @@
                 <div class="panel panel-info">
                     <div class="panel-heading">
 
+                        <h3 class="panel-title"> <a href="#exp20" data-parent="#monaccordeon" data-toggle="collapse"><strong><a href="news-20.html">lol</a></strong> <br> <em>Publié le :06/11/2018 à 10h33 </em></a>
+                        </h3>
+                    </div>
+                    <div id="exp1" class="panel-collapse collapse in ">
+                        <div class="panel-body">
+                            <p>
+                                <p>:,bc,fvjj,v</p>                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+
+                        <h3 class="panel-title"> <a href="#exp19" data-parent="#monaccordeon" data-toggle="collapse"><strong><a href="news-19.html">Une image pour le Fun</a></strong> <br> <em>Publié le :06/11/2018 à 09h38 </em></a>
+                        </h3>
+                    </div>
+                    <div id="exp1" class="panel-collapse collapse in ">
+                        <div class="panel-body">
+                            <p>
+                                <p>DSDCDCDCDCSDC</p>                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+
                         <h3 class="panel-title"> <a href="#exp7" data-parent="#monaccordeon" data-toggle="collapse"><strong><a href="news-7.html">Un peu d'humour</a></strong> <br> <em>Publié le :31/10/2018 à 16h27 </em></a>
                         </h3>
                     </div>
@@ -191,38 +206,6 @@ Il perd sa chemise le samedi soir et n'a plus que cinq cents en poche et son bil
 
                 </div>
                 
-                <div class="panel panel-info">
-                    <div class="panel-heading">
-
-                        <h3 class="panel-title"> <a href="#exp4" data-parent="#monaccordeon" data-toggle="collapse"><strong><a href="news-4.html">Le soleil d'avant</a></strong> <br> <em>Publié le :19/04/2018 à 13h45 </em></a>
-                        </h3>
-                    </div>
-                    <div id="exp1" class="panel-collapse collapse in ">
-                        <div class="panel-body">
-                            <p>
-                                Au cours d'une discussion dans un bar, un gars lance à la cantonade :<br />
-- Hé ben moi les gars, je connais tout le monde sur la planète personnellement et je suis prêt à tenir un pari pour 50 000...                            </p>
-                        </div>
-                    </div>
-
-                </div>
-                
-                <div class="panel panel-info">
-                    <div class="panel-heading">
-
-                        <h3 class="panel-title"> <a href="#exp3" data-parent="#monaccordeon" data-toggle="collapse"><strong><a href="news-3.html">Pourquoi pas</a></strong> <br> <em>Publié le :19/04/2018 à 13h45 </em></a>
-                        </h3>
-                    </div>
-                    <div id="exp1" class="panel-collapse collapse in ">
-                        <div class="panel-body">
-                            <p>
-                                Ce sont des touristes britanniques qui ont décidé de revenir passer leurs vacances en Corse.<br />
-Les britanniques sont vaccinés contre les attentats ayant affaire depuis quelques décennies aux...                            </p>
-                        </div>
-                    </div>
-
-                </div>
-                
         </div>
     </div>
 </div>
@@ -236,7 +219,8 @@ Les britanniques sont vaccinés contre les attentats ayant affaire depuis quelqu
         <!-- Javascript de Bootstrap -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
         <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-        <script src="/web/js/tinymce/tinymce.min.js"></script>
+
+
         <script>
             tinymce.init({
                 selector: '.mytextarea',

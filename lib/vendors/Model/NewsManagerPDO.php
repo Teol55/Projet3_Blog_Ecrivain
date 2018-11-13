@@ -60,11 +60,12 @@ class NewsManagerPDO extends NewsManager
     $requete->setFetchMode(\PDO::FETCH_CLASS | \PDO::FETCH_PROPS_LATE, '\Entity\News');
     
     $listeNews = $requete->fetchAll();
-    
+   
     foreach ($listeNews as $news)
     {
       $news->setDateAjout(new \DateTime($news->dateAjout()));
       $news->setDateModif(new \DateTime($news->dateModif()));
+        
     }
     
     $requete->closeCursor();
@@ -80,9 +81,10 @@ class NewsManagerPDO extends NewsManager
     $requete->setFetchMode(\PDO::FETCH_CLASS | \PDO::FETCH_PROPS_LATE, '\Entity\News');
     
     $listeAllNews = $requete->fetchAll();
-    
+  
     foreach ($listeAllNews as $news)
     {
+        
       $news->setDateAjout(new \DateTime($news->dateAjout()));
       $news->setDateModif(new \DateTime($news->dateModif()));
     }
