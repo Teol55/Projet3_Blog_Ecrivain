@@ -1,10 +1,9 @@
-<div class="container">
-    <h2>Modifier une news</h2>
-    <form action="" method="post">
-        <p>
-            <?= $form ?>
+<h2>
+    Modifier une news</h2>
+<form action="" method="post" enctype="multipart/form-data">
+    <p>
+        <?= $form ?>
 
-                <input type="submit" value="Modifier" />
-        </p>
-    </form>
-</div>
+            <input type="submit" value="Modifier" />
+    </p>
+</form>

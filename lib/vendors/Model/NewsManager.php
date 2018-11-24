@@ -24,6 +24,11 @@ abstract class NewsManager extends Manager
   {
     if ($news->isValid())
     {
+         $this->formatImage($news);
+     error_log( "news dans fonction save= " .print_r($news,true) .PHP_EOL,3,"../../../tmp/mes-erreurs.log");
+    
+        $this->saveImage($news['image']);
+        
       $news->isNew() ? $this->add($news) : $this->modify($news);
     }
     else
@@ -75,4 +80,50 @@ abstract class NewsManager extends Manager
     /**
     *Methode permettant une jointure externe entre News et commentaire
     */
- abstract public function getNewsComment(); }
+ abstract public function getNewsComment();
+
+public function saveImage(array $image)
+{
+    $dossier = '../upload/';
+     $fichier = basename($image['name']);
+     if(move_uploaded_file($image['tmp_name'], $dossier . $fichier)) //Si la fonction renvoie TRUE, c'est que ça a fonctionné...
+     {
+          error_log("Upload effectué avec succès !".PHP_EOL ,3,"../../../tmp/mes-erreurs.log");
+     }
+     else //Sinon (la fonction renvoie FALSE).
+     {
+         error_log("Echec de l\'upload !".PHP_EOL ,3,"../../../tmp/mes-erreurs.log");
+     }
+
+}
+public function formatImage(News $news)
+    
+{
+    $image=$news['image'];
+    $extension = strrchr($image['name'],'.');
+    $name=$news['chapitre'];
+//on modifie le nom de l image par le chapitre
+    $fichier = strtr($name,
+     'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ',
+     'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy'); 
+//On remplace les lettres accentutées par les non accentuées dans $fichier.
+//Et on récupère le résultat dans fichier
+ 
+//En dessous, il y a l'expression régulière qui remplace tout ce qui n'est pas une lettre non accentuées ou un chiffre
+//dans $fichier par un tiret "-" et qui place le résultat dans $fichier.
+$fichier = preg_replace('/([^.a-z0-9]+)/i', '_', $fichier);
+    
+    $image['name']=$fichier.$extension;
+
+    
+    $news['image']=$image;
+     error_log( "news sortie fonction format= " .print_r($news,true).PHP_EOL,3,"../../../tmp/mes-erreurs.log");
+    $news->setNameImage($image['name']);
+    return $news;
+    
+   
+    
+}
+    
+
+}

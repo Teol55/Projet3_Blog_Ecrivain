@@ -10,15 +10,18 @@ class News extends Entity
             $contenu,
             $dateAjout,
             $dateModif,
-            $image;
+            $image,
+            $sizeFile,
+            $nameImage;
 
   const CHAPITRE_INVALIDE = 1;
   const TITRE_INVALIDE = 2;
   const CONTENU_INVALIDE = 3;
+  const IMAGE_INVALIDE = 4;
 
   public function isValid()
   {
-    return !(empty($this->chapitre) || empty($this->titre) || empty($this->contenu));
+    return !(empty($this->chapitre) || empty($this->titre) || empty($this->contenu) || empty($this->image));
   }
 
 
@@ -66,8 +69,28 @@ class News extends Entity
 
 public function setImage($image)
 {
+    if(empty($image))
+    {
+      $this->erreurs[]= self::IMAGE_INVALIDE;   
+    }
     $this->image=$image;
+    
+  error_log("set image :" .print_r($image,true).PHP_EOL,3,"../../../tmp/mes-erreurs.log");  
+    
 }
+public function setSizeFile($sizeFile)
+{
+    $this->sizeFile=$sizeFile;
+ 
+
+    
+}
+    
+ public function setNameImage($nameImage)
+     
+ {
+     $this->nameImage= $nameImage;
+ }
   // GETTERS //
 
   public function chapitre()
@@ -98,4 +121,12 @@ public function setImage($image)
   {
         return $this->image;
   }
+public function sizeFile()
+  {
+        return $this->sizeFile;
+  }
+public function nameImage()
+{
+    return $this->nameImage;
+}
 }

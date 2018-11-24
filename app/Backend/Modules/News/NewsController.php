@@ -64,8 +64,8 @@ class NewsController extends BackController
     {
       $comment = new Comment([
         'id' => $request->getData('id'),
-        'auteur' => $request->postData('auteur'),
-        'contenu' => $request->postData('contenu')
+        'auteur' => htmlspecialchars ($request->postData('auteur')),
+        'contenu' =>htmlspecialchars ( $request->postData('contenu'))
       ]);
     }
     else
@@ -94,12 +94,26 @@ class NewsController extends BackController
   {
     if ($request->method() == 'POST')
     {
+        
+        if($request->filesExists('image'))
+        {
+        $image=$request->filesData('image');
+        //$this->managers->getManagerOf('News')->saveImage($request->filesData('image'));
+            
+        }
+        
+       error_log( print_r($image,true).PHP_EOL,3,"../../../tmp/mes-erreurs.log");
+      
       $news = new News([
-        'chapitre' => $request->postData('chapitre'),
-        'titre' => $request->postData('titre'),
-        'contenu' => $request->postData('contenu')
+        'chapitre' =>htmlspecialchars ($request->postData('chapitre')),
+        'titre' => htmlspecialchars ($request->postData('titre')),
+        'contenu' =>htmlspecialchars ( $request->postData('contenu')),
+         'image' => $image,
+          'sizeFile'=>$image['size']
       ]);
-
+     error_log( print_r($news,true).PHP_EOL,3,"../../../tmp/mes-erreurs.log");
+        //print_r($news['image']);
+       //die;
       if ($request->getExists('id'))
       {
         $news->setId($request->getData('id'));

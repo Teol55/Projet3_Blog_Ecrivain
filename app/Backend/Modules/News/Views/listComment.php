@@ -1,31 +1,30 @@
-<div class="container">
-
-
-    <?php 
+<?php 
                 
 
                 
                 foreach ($listNews as $news)
                 { ?>
-    <div class="panel panel-primary">
 
-        <table class="table table-condensed">
-            <div class="panel-heading">
-                <h3 class="panel-title">
-                    <?= $news->chapitre() .': '. $news->titre() ?>
-                </h3>
-            </div>
-            <thead>
-                <tr>
-                    <th>Id commentaire</th>
-                    <th>Auteur</th>
-                    <th>contenu</th>
-                    <th>date</th>
-                    <th>Action</th>
 
-                </tr>
-            </thead>
-            <?php     {
+<div class="panel panel-primary">
+
+    <table class="table table-condensed">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <?= $news->chapitre() .': '. $news->titre() ?>
+            </h3>
+        </div>
+        <thead>
+            <tr>
+                <th>Id commentaire</th>
+                <th>Auteur</th>
+                <th>contenu</th>
+                <th>date</th>
+                <th>Action</th>
+
+            </tr>
+        </thead>
+        <?php     {
 
             
                      foreach($listComments as  $comment)
@@ -48,15 +47,6 @@
                     }?>
 
 
-        </table>
-    </div>
-    <?php    } ?>
-
-
-
-
-
-
-
-
+    </table>
 </div>
+<?php    } ?>

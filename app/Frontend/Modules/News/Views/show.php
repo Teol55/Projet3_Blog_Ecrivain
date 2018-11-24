@@ -1,9 +1,10 @@
 <div class="container">
 
     <div class="cont_1 row">
-
+        <?php error_log( "news = " .$news->nameImage() .PHP_EOL,3,"../../../tmp/mes-erreurs.log"); ?>
         <div class="col-lg-6" id="presentation">
-            <img src="images/image-<?= $news->id() ?>.jpg" alt="Billet simple pour l'Alaska">
+
+            <img src="../../../../../upload/<?= $news->nameImage() ?>" alt="Billet simple pour l' Alaska">
         </div>
         <div class="col-lg-6" id="presentation2">
             <?php

@@ -7,7 +7,7 @@ use \OCFram\TextField;
 use \OCFram\UploadFileField;
 use \OCFram\MaxLengthValidator;
 use \OCFram\NotNullValidator;
-use \OCFram\ExtentionValidator;
+use \OCFram\ExtensionValidator;
 use \OCFram\SizeValidator;
 
 class NewsFormBuilder extends FormBuilder
@@ -36,11 +36,11 @@ class NewsFormBuilder extends FormBuilder
         'label' => 'Image:',
         'name' => 'image',
         'enctype' => 'multipart/from-data',
-        'size' => 300000,
+        'size' => 4000000,
         'type' => 'file',
         'validators' => [
-         new ExtentionValidator('ce n est pas une extention Valide', array('jpg','png','bmp')),
-          new SizeValidator('Le fichier est trop gros',5000),
+         new ExtensionValidator('ce n est pas une extention Valide', ['.jpg','.png','.bmp']),
+         new SizeValidator('Le fichier est trop gros',4000),
         ],
        ]))
        ->add(new TextField([

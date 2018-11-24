@@ -42,4 +42,13 @@ class HTTPRequest extends ApplicationComponent
   {
     return $_SERVER['REQUEST_URI'];
   }
+ 
+  public function filesExists($key)
+    {
+        return isset($_FILES[$key]);
+    }
+  public function filesData($key)
+  {
+      return isset($_FILES[$key]) ? $_FILES[$key] : null;
+  }
 }
