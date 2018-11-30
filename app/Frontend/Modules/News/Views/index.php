@@ -10,7 +10,7 @@
             <li><i class="fa fa-portrait fa-2x">Je suis Ecrivain depuis 20 ans </i>
             </li>
             <br>
-            <li><i class="fa fa-portrait fa-2x">je souhaite vous présenter mon nouveau roman du maniére différente</i>
+            <li><i class="fa fa-portrait fa-2x">je souhaite vous présenter mon nouveau roman d'une maniére différente</i>
             </li>
             <br>
             <li><i class="fa fa-portrait fa-2x">Voici la publication des derniers chapitres</i>

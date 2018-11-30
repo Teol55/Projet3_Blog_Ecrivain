@@ -1,4 +1,4 @@
-1544170777
+1544177080
 <!DOCTYPE html>
 <html>
 
@@ -71,7 +71,7 @@
             <li><i class="fa fa-portrait fa-2x">Je suis Ecrivain depuis 20 ans </i>
             </li>
             <br>
-            <li><i class="fa fa-portrait fa-2x">je souhaite vous présenter mon nouveau roman du maniére différente</i>
+            <li><i class="fa fa-portrait fa-2x">je souhaite vous présenter mon nouveau roman d'une maniére différente</i>
             </li>
             <br>
             <li><i class="fa fa-portrait fa-2x">Voici la publication des derniers chapitres</i>
@@ -136,7 +136,7 @@
                     <div class="panel-body">
                         <p>
                             <div id="TheTexte" class="Texte" lang="zxx"><br />
-<p>Ideoque fertur neminem aliquando ob haec vel similia poenae addictum oblato de more elogio revocari iussisse, quod inexorabiles quoque principes...                        </p>
+<p><em><strong>Ideoque fertur neminem aliquando</strong></em> ob haec vel similia poenae addictum oblato de more elogio revocari iussisse, quod...                        </p>
                     </div>
                 </div>
 
@@ -215,13 +215,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <!-- Javascript de Bootstrap -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-
+    <!-- <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script> -->
+    <script src="/js/tinymce/tinymce.min.js"></script>
 
     <script>
         tinymce.init({
             selector: '.mytextarea',
-            language_url: '/languages/fr_FR.js'
+            language: 'fr_FR'
         });
 
     </script>
