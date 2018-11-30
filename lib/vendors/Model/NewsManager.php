@@ -84,7 +84,7 @@ abstract class NewsManager extends Manager
 
 public function saveImage(array $image)
 {
-    $dossier = '../upload/';
+    $dossier = 'images/';
      $fichier = basename($image['name']);
      if(move_uploaded_file($image['tmp_name'], $dossier . $fichier)) //Si la fonction renvoie TRUE, c'est que ça a fonctionné...
      {

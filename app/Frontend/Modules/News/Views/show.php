@@ -4,7 +4,7 @@
         <?php error_log( "news = " .$news->nameImage() .PHP_EOL,3,"../../../tmp/mes-erreurs.log"); ?>
         <div class="col-lg-6" id="presentation">
 
-            <img src="../../../../../upload/<?= $news->nameImage() ?>" alt="Billet simple pour l' Alaska">
+            <img src="images/<?= $news->nameImage() ?>" alt="Billet simple pour l' Alaska">
         </div>
         <div class="col-lg-6" id="presentation2">
             <?php
@@ -61,7 +61,7 @@ foreach ($comments as $comment)
                                     <a href="comment-signal-<?= $comment->id() ?>.html">Signaler</a>
 
                                     <?php if ($user->isAuthenticated()) { ?> -
-                                    <a href="admin/comment-update-<?= $comment->id() ?>.html">Modifier</a>
+                                    <a href="admin/comment-update-<?= $comment->id() ?>.html">Modifier</a> -
                                     <a href="admin/comment-delete-<?= $comment->id() ?>.html">Supprimer</a>
                                     <?php } ?>
                             </legend>
@@ -73,7 +73,7 @@ foreach ($comments as $comment)
 }
 ?>
 
-                </ul><br>
+                </ul>
                 <p><a href="commenter-<?= $news->id() ?>.html">Ajouter un commentaire</a></p>
     </div>
 </div>

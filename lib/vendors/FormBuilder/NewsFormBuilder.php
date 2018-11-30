@@ -9,6 +9,7 @@ use \OCFram\MaxLengthValidator;
 use \OCFram\NotNullValidator;
 use \OCFram\ExtensionValidator;
 use \OCFram\SizeValidator;
+use \OCFram\HiddenField;
 
 class NewsFormBuilder extends FormBuilder
 {
@@ -27,10 +28,17 @@ class NewsFormBuilder extends FormBuilder
         'label' => 'Titre: ',
         'name' => 'titre',
         'maxLength' => 100,
+        'size' => 50,
         'validators' => [
           new MaxLengthValidator('Le titre spécifié est trop long (100 caractères maximum)', 100),
           new NotNullValidator('Merci de spécifier le titre du chapitre'),
         ],
+       ]))
+        ->add(new HiddenField([
+        
+        'name' => 'nameImage',
+       
+        
        ]))
          ->add(new UploadFileField([
         'label' => 'Image:',

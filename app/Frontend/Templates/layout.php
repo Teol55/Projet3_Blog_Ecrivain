@@ -96,8 +96,7 @@
     <script>
         tinymce.init({
             selector: '.mytextarea',
-            language: 'fr_FR',
-            directionality: 'rtl'
+            language_url: '/languages/fr_FR.js'
         });
 
     </script>

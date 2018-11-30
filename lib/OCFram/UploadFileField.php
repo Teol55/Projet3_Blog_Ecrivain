@@ -5,7 +5,7 @@ class UploadFileField extends Field
 {
   
  
-  protected $size;
+ protected $size;
     
     
 public function buildWidget()
@@ -17,9 +17,9 @@ public function buildWidget()
       $widget .= $this->errorMessage.'<br />';
     }
     
-    $widget .= '<label>'.$this->label.'</label><br/><input type="hidden" name="MAX_FILE_SIZE" value="'.$this->size.'"//>';
+    $widget .= '<div class="form-group"> <label for="text" class="col-lg-4 control-label">'.$this->label.'</label><div class="col-lg-6"><input type="hidden" name="MAX_FILE_SIZE" value="'.$this->size.'"//>';
     
-    $widget .='<input type="'.$this->type .'" name="'.$this->name .'">';
+    $widget .='<input type="'.$this->type .'" name="'.$this->name .'"></div> </div>';
     
     
   
@@ -30,13 +30,5 @@ public function buildWidget()
   }
   
    
-        public function setSize($size)
-  {
   
-    
-    if (is_int($size))
-    {
-      $this->size = $size;
-    }
-  }
 }

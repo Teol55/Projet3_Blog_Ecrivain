@@ -12,6 +12,7 @@ abstract class Field
   protected $value;
   protected $classe;
   protected $type;
+  protected $size;
   
   
   public function __construct(array $options = [])
@@ -131,4 +132,13 @@ abstract class Field
             $this->type= $type;
         }
     }
+          public function setSize($size)
+  {
+  
+    
+    if (is_int($size))
+    {
+      $this->size = $size;
+    }
+  }
 }

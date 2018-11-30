@@ -84,7 +84,7 @@ class NewsController extends BackController
     {
       $this->app->user()->setFlash('Le commentaire a bien été modifié');
 
-      $this->app->httpResponse()->redirect('/admin/');
+      $this->app->httpResponse()->redirect('/admin/comment-list.html');
     }
 
     $this->page->addVar('form', $form->createView());
@@ -94,11 +94,22 @@ class NewsController extends BackController
   {
     if ($request->method() == 'POST')
     {
-        
+        error_log( "postdata nom image:" .print_r($request->postData('nameImage'),true).PHP_EOL,3,"../../../tmp/mes-erreurs.log");
         if($request->filesExists('image'))
         {
         $image=$request->filesData('image');
         //$this->managers->getManagerOf('News')->saveImage($request->filesData('image'));
+            
+        }
+        else{
+            $image=[
+              'name'=> 'Chapitre_10.jpg',
+                'size' =>0,
+                'tmp_name' => 'C:\wamp64\www\projet3\upload\Chapitre_10.jpg'
+
+            ];
+       
+          error_log( "image dans else: ".print_r($image,true).PHP_EOL,3,"../../../tmp/mes-erreurs.log");  
             
         }
         
@@ -107,7 +118,7 @@ class NewsController extends BackController
       $news = new News([
         'chapitre' =>htmlspecialchars ($request->postData('chapitre')),
         'titre' => htmlspecialchars ($request->postData('titre')),
-        'contenu' =>htmlspecialchars ( $request->postData('contenu')),
+        'contenu' => $request->postData('contenu'),
          'image' => $image,
           'sizeFile'=>$image['size']
       ]);
@@ -125,6 +136,12 @@ class NewsController extends BackController
       if ($request->getExists('id'))
       {
         $news = $this->managers->getManagerOf('News')->getUnique($request->getData('id'));
+          $name=[
+              'name'=>$news['nameImage']];
+          $news->setImage($name);                     
+          
+          error_log( "name  dans process: ".print_r($news,true).PHP_EOL,3,"../../../tmp/mes-erreurs.log"); 
+         error_log( "news  dans process: ".print_r($news,true).PHP_EOL,3,"../../../tmp/mes-erreurs.log");   
       }
       else
       {
@@ -158,7 +175,20 @@ class NewsController extends BackController
         
          $manager = $this->managers->getManagerOf('Comments');
        
-        $this->page->addVar('listComments', $manager->getAllComment()); 
+    $listcomments=$manager->getAllComment();
+        
+        foreach ($listcomments as $comment)
+    {
+      if (strlen($comment->contenu()) > 20)
+      {
+        $debut = substr($comment->contenu(), 0, 20);
+        $debut = substr($debut, 0, strrpos($debut, ' ')) . '...';
+        
+        $comment->setContenu($debut);
+      }
+    }
+       
+        $this->page->addVar('listComments', $listcomments); 
 
     }
 }

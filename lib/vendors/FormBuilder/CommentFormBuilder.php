@@ -12,7 +12,7 @@ class CommentFormBuilder extends FormBuilder
   public function build()
   {
     $this->form->add(new StringField([
-        'label' => 'Auteur',
+        'label' => 'Auteur: ',
         'name' => 'auteur',
         'maxLength' => 50,
         'validators' => [
@@ -21,7 +21,7 @@ class CommentFormBuilder extends FormBuilder
         ],
        ]))
        ->add(new TextField([
-        'label' => 'Contenu',
+        'label' => 'Contenu: ',
         'name' => 'contenu',
         'rows' => 7,
         'cols' => 50,

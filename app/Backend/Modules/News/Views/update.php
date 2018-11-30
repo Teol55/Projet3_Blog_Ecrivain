@@ -1,9 +1,15 @@
-<h2>
-    Modifier une news</h2>
-<form action="" method="post" enctype="multipart/form-data">
-    <p>
-        <?= $form ?>
+<form class="form-horizontal col-lg-12" action="" method="post" enctype="multipart/form-data">
 
-            <input type="submit" value="Modifier" />
-    </p>
+    <legend>
+        <h2>
+            Modifier un chapitre</h2>
+    </legend>
+    <div class="row">
+        <p>
+            <?= $form ?>
+
+                <input class="pull-right btn btn-default" type="submit" value="Modifier" />
+        </p>
+
+    </div>
 </form>

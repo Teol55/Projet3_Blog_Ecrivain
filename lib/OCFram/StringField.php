@@ -8,13 +8,16 @@ class StringField extends Field
   public function buildWidget()
   {
     $widget = '';
+    $widget .='<div class="form-group">';
     
     if (!empty($this->errorMessage))
     {
-      $widget .= $this->errorMessage.'<br />';
+      $widget .='<div class="has-error has-feedback"><label class="control-label  class="col-lg-6" for="idError">' .$this->errorMessage.'</label></div><br />';
     }
     
-    $widget .= '<label>'.$this->label.'</label><input type="text" name="'.$this->name.'"';
+    $widget .= '
+            <label for="text" class="col-lg-4 control-label">
+'.$this->label.'</label><div class="col-lg-6"><input type="text" name="'.$this->name.'"';
     
     if (!empty($this->value))
     {
@@ -25,8 +28,14 @@ class StringField extends Field
     {
       $widget .= ' maxlength="'.$this->maxLength.'"';
     }
+      
+     
+    if (!empty($this->size))
+    {
+      $widget .= ' size="'.$this->size.'"';
+    }
     
-    return $widget .= ' />';
+    return $widget .= ' /> </div> </div>';
   }
   
   public function setMaxLength($maxLength)

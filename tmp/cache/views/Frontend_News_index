@@ -1,4 +1,4 @@
-1543679252
+1544168000
 <!DOCTYPE html>
 <html>
 
@@ -144,13 +144,14 @@
             <div class="panel panel-info">
                 <div class="panel-heading">
 
-                    <h3 class="panel-title"> <a href="#exp21" data-parent="#monaccordeon" data-toggle="collapse"><strong><a href="news-21.html">il était une fois la sauvegarde</a></strong> <br> <em>Publié le :24/11/2018 à 09h06 </em></a>
+                    <h3 class="panel-title"> <a href="#exp21" data-parent="#monaccordeon" data-toggle="collapse"><strong><a href="news-21.html">Il était une fois la sauvegarde</a></strong> <br> <em>Publié le :24/11/2018 à 09h06 </em></a>
                     </h3>
                 </div>
                 <div id="exp1" class="panel-collapse collapse in ">
                     <div class="panel-body">
                         <p>
-                            <p>qfqfqqw qdq dqd qdq qd q qd dq q q d dq q d q&nbsp; qdq dgbcxbxbxbxbq qeswwf</p>@fjgdh¨¨ëë^zx^v                        </p>
+                            <div id="TheTexte" class="Texte" lang="zxx"><br />
+<p>Ideoque fertur neminem aliquando ob haec vel similia poenae addictum oblato de more elogio revocari iussisse, quod inexorabiles quoque principes...                        </p>
                     </div>
                 </div>
 
@@ -166,7 +167,7 @@
                     <div class="panel-body">
                         <p>
                             <div id="TheTexte" class="Texte" lang="zxx"><br />
-<p>Dum apud Persas, ut supra narravimus, perfidia regis motus agitat insperatos, et in eois tractibus bella rediviva consurgunt, anno sexto decimo et eo...                        </p>
+<p>Ideoque fertur neminem aliquando ob haec vel similia poenae addictum oblato de more elogio revocari iussisse, quod inexorabiles quoque principes...                        </p>
                     </div>
                 </div>
 
@@ -235,8 +236,7 @@
     <script>
         tinymce.init({
             selector: '.mytextarea',
-            language: 'fr_FR',
-            directionality: 'rtl'
+            language_url: '/languages/fr_FR.js'
         });
 
     </script>
