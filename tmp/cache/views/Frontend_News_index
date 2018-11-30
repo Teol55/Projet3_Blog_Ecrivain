@@ -1,4 +1,4 @@
-1544168000
+1544170777
 <!DOCTYPE html>
 <html>
 
@@ -44,24 +44,9 @@
                     </li>
                     <li><a href="/">Accueil</a>
                     </li>
-                                        </li>
+                                        <li><a href="news-1.html">Billet Simple pour l'Alaska</a>
+                                            </li>
                     
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Admin<span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li>
-                                <li><a href="/admin/">listes des Chapitres</a></li>
-                                <li><a href="/admin/news-insert.html">Ajouter un Chapitre</a></li>
-                                <li><a href="/admin/comment-list.html">Commentaires</a></li>
-
-                        </ul>
-                        </li>
-
-
-
-
-                </ul>
-                
             </div>
         </nav>
     </header>
@@ -72,7 +57,7 @@
 
 
 
-        <div class="container">
+    <p style="text-align: center;"> Bonne Journée Jean, Vous êtes bien déconnecté</p>    <div class="container">
 
         <div class="cont_1 row">
 

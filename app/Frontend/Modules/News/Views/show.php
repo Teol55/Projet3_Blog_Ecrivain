@@ -74,6 +74,6 @@ foreach ($comments as $comment)
 ?>
 
                 </ul>
-                <p><a href="commenter-<?= $news->id() ?>.html">Ajouter un commentaire</a></p>
+
     </div>
 </div>

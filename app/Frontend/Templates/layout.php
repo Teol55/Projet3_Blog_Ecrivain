@@ -60,7 +60,7 @@
 
                         </ul>
                         </li>
-
+                        <li><a href="/admin/deconnexion.html">Déconnexion</a>
 
 
 

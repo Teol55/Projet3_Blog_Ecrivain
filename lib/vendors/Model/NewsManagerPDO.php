@@ -73,27 +73,7 @@ class NewsManagerPDO extends NewsManager
     
     return $listeNews;
   }
-     public function getAll()
-  {
-    $sql = 'SELECT id, chapitre, titre, contenu, dateAjout, dateModif,nameImage FROM news ORDER BY id ASC';
-    
-       
-    $requete = $this->dao->query($sql);
-    $requete->setFetchMode(\PDO::FETCH_CLASS | \PDO::FETCH_PROPS_LATE, '\Entity\News');
-    
-    $listeAllNews = $requete->fetchAll();
-  
-    foreach ($listeAllNews as $news)
-    {
-    
-      $news->setDateAjout(new \DateTime($news->dateAjout()));
-      $news->setDateModif(new \DateTime($news->dateModif()));
-    }
-    
-    $requete->closeCursor();
-    
-    return $listeAllNews;
-  }
+   
   
   public function getUnique($id)
   {

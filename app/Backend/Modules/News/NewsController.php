@@ -66,6 +66,7 @@ class NewsController extends BackController
         'id' => $request->getData('id'),
         'auteur' => htmlspecialchars ($request->postData('auteur')),
         'contenu' =>htmlspecialchars ( $request->postData('contenu'))
+        
       ]);
     }
     else
@@ -89,6 +90,15 @@ class NewsController extends BackController
 
     $this->page->addVar('form', $form->createView());
   }
+    public function  executeDeconnexion()
+        
+    {
+       $this->app->user()->setAuthenticated(false); 
+        $this->app->user()->setFlash(' Bonne Journée Jean, Vous êtes bien déconnecté');
+
+      $this->app->httpResponse()->redirect('/');
+        
+    }
 
   public function processForm(HTTPRequest $request)
   {
@@ -171,7 +181,7 @@ class NewsController extends BackController
         
         $manager = $this->managers->getManagerOf('News');
         
-        $this->page->addVar('listNews', $manager->getAll());
+        $this->page->addVar('listNews', $manager->getList(0,50));
         
          $manager = $this->managers->getManagerOf('Comments');
        
@@ -191,4 +201,6 @@ class NewsController extends BackController
         $this->page->addVar('listComments', $listcomments); 
 
     }
+    
+    
 }
