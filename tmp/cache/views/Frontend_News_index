@@ -1,8 +1,11 @@
-1544177080
+1544548655
 <!DOCTYPE html>
 <html>
 
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
         Liste des 5 dernières news    </title>
     <meta name="description" content="Billet simple pour l'Alaska">
@@ -10,7 +13,7 @@
     <meta charset="utf-8" />
 
     <link rel="stylesheet" href="/css/style.css" type="text/css" />
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -28,25 +31,41 @@
         <!-- Navigation
       ================================================== -->
         <nav id="navbar" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                          <span class="icon-bar"></span>
                          <span class="icon-bar"></span>
                          <span class="icon-bar"></span>
                     </button>
-                <a class="navbar-brand" href="/">Jean ForterRoche</a>
-            </div>
+                    <a class="navbar-brand" href="/">Jean ForterRoche</a>
+                </div>
 
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li><a href="/">Accueil</a>
-                    </li>
-                                        <li><a href="news-1.html">Billet Simple pour l'Alaska</a>
-                                            </li>
-                    
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="hidden">
+                            <a href="#page-top"></a>
+                        </li>
+                        <li><a href="/">Accueil</a>
+                        </li>
+                                                </li>
+                        
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Admin<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+
+                                <li><a href="/admin/">listes des Chapitres</a></li>
+                                <li><a href="/admin/news-insert.html">Ajouter un Chapitre</a></li>
+                                <li><a href="/admin/comment-list.html">Commentaires</a></li>
+
+                            </ul>
+                        </li>
+                        <li><a href="/admin/deconnexion.html">Déconnexion</a></li>
+
+
+                                            </ul>
+
+                </div>
             </div>
         </nav>
     </header>
@@ -57,7 +76,7 @@
 
 
 
-    <p style="text-align: center;"> Bonne Journée Jean, Vous êtes bien déconnecté</p>    <div class="container">
+        <div class="container">
 
         <div class="cont_1 row">
 
@@ -129,6 +148,52 @@
             <div class="panel panel-info">
                 <div class="panel-heading">
 
+                    <h3 class="panel-title"> <a href="#exp24" data-parent="#monaccordeon" data-toggle="collapse"><strong><a href="news-24.html">essai</a></strong> <br> <em>Publié le :04/12/2018 à 18h17 </em></a>
+                    </h3>
+                </div>
+                <div id="exp1" class="panel-collapse collapse in ">
+                    <div class="panel-body">
+                        <p>
+                            <p>dqsfxgchnvb,</p>                        </p>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="panel panel-info">
+                <div class="panel-heading">
+
+                    <h3 class="panel-title"> <a href="#exp23" data-parent="#monaccordeon" data-toggle="collapse"><strong><a href="news-23.html">y a du spotr</a></strong> <br> <em>Publié le :02/12/2018 à 07h41 </em></a>
+                    </h3>
+                </div>
+                <div id="exp1" class="panel-collapse collapse in ">
+                    <div class="panel-body">
+                        <p>
+                            <p>Dein Syria per speciosam interpatet diffusa planitiem. hanc nobilitat Antiochia, mundo cognita civitas, cui non certaverit alia advecticiis ita adfluere copiis et internis, et Laodicia et Apamia...                        </p>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="panel panel-info">
+                <div class="panel-heading">
+
+                    <h3 class="panel-title"> <a href="#exp22" data-parent="#monaccordeon" data-toggle="collapse"><strong><a href="news-22.html">il était une fois la nouvelle aire</a></strong> <br> <em>Publié le :01/12/2018 à 09h38 </em></a>
+                    </h3>
+                </div>
+                <div id="exp1" class="panel-collapse collapse in ">
+                    <div class="panel-body">
+                        <p>
+                            <div id="TheTexte" class="Texte" lang="zxx"><br />
+<p>Thalassius vero ea tempestate praefectus praetorio praesens ipse quoque adrogantis ingenii, considerans incitationem eius ad multorum augeri...                        </p>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="panel panel-info">
+                <div class="panel-heading">
+
                     <h3 class="panel-title"> <a href="#exp21" data-parent="#monaccordeon" data-toggle="collapse"><strong><a href="news-21.html">Il était une fois la sauvegarde</a></strong> <br> <em>Publié le :24/11/2018 à 09h06 </em></a>
                     </h3>
                 </div>
@@ -153,52 +218,6 @@
                         <p>
                             <div id="TheTexte" class="Texte" lang="zxx"><br />
 <p>Ideoque fertur neminem aliquando ob haec vel similia poenae addictum oblato de more elogio revocari iussisse, quod inexorabiles quoque principes...                        </p>
-                    </div>
-                </div>
-
-            </div>
-            
-            <div class="panel panel-info">
-                <div class="panel-heading">
-
-                    <h3 class="panel-title"> <a href="#exp6" data-parent="#monaccordeon" data-toggle="collapse"><strong><a href="news-6.html">Les chiens</a></strong> <br> <em>Publié le :01/11/2018 à 09h09 </em></a>
-                    </h3>
-                </div>
-                <div id="exp1" class="panel-collapse collapse in ">
-                    <div class="panel-body">
-                        <p>
-                            <div id="TheTexte" class="Texte" lang="zxx"><br />
-<p>Et eodem impetu Domitianum praecipitem per scalas itidem funibus constrinxerunt, eosque coniunctos per ampla spatia civitatis acri raptavere discursu....                        </p>
-                    </div>
-                </div>
-
-            </div>
-            
-            <div class="panel panel-info">
-                <div class="panel-heading">
-
-                    <h3 class="panel-title"> <a href="#exp5" data-parent="#monaccordeon" data-toggle="collapse"><strong><a href="news-5.html">Le froid venant du nord</a></strong> <br> <em>Publié le :19/04/2018 à 13h46 </em></a>
-                    </h3>
-                </div>
-                <div id="exp1" class="panel-collapse collapse in ">
-                    <div class="panel-body">
-                        <p>
-                            <p>Un homme d'affaire am&eacute;ricain prend l'avion pour aller jouer &agrave; la roulette pendant le week-end &agrave; Las Vegas. Il perd sa chemise le samedi soir et n'a plus que cinq cents en...                        </p>
-                    </div>
-                </div>
-
-            </div>
-            
-            <div class="panel panel-info">
-                <div class="panel-heading">
-
-                    <h3 class="panel-title"> <a href="#exp4" data-parent="#monaccordeon" data-toggle="collapse"><strong><a href="news-4.html">Le soleil d'avant</a></strong> <br> <em>Publié le :19/04/2018 à 13h45 </em></a>
-                    </h3>
-                </div>
-                <div id="exp1" class="panel-collapse collapse in ">
-                    <div class="panel-body">
-                        <p>
-                            <p>Au cours d'une discussion dans un bar, un gars lance &agrave; la cantonade : - H&eacute; ben moi les gars, je connais tout le monde sur la plan&egrave;te personnellement et je suis pr&ecirc;t...                        </p>
                     </div>
                 </div>
 

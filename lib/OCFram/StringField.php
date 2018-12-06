@@ -17,7 +17,7 @@ class StringField extends Field
     
     $widget .= '
             <label for="text" class="col-lg-4 control-label">
-'.$this->label.'</label><div class="col-lg-6"><input type="text" name="'.$this->name.'"';
+            '.$this->label.'</label><div class="col-lg-6"><input type="text" name="'.$this->name.'"';
     
     if (!empty($this->value))
     {
@@ -35,7 +35,7 @@ class StringField extends Field
       $widget .= ' size="'.$this->size.'"';
     }
     
-    return $widget .= ' /> </div> </div>';
+    return $widget .= ' /> </div></div>';
   }
   
   public function setMaxLength($maxLength)

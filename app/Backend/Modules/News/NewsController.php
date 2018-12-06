@@ -102,25 +102,40 @@ class NewsController extends BackController
 
   public function processForm(HTTPRequest $request)
   {
+      
+      
     if ($request->method() == 'POST')
     {
-        error_log( "postdata nom image:" .print_r($request->postData('nameImage'),true).PHP_EOL,3,"../../../tmp/mes-erreurs.log");
+        $folder='images/';
+        $folder .=$request->postData('nameImage');
+     
         if($request->filesExists('image'))
         {
         $image=$request->filesData('image');
-        //$this->managers->getManagerOf('News')->saveImage($request->filesData('image'));
+        
             
         }
-        else{
+        
+        else if( is_file($folder))
+                {
             $image=[
-              'name'=> 'Chapitre_10.jpg',
-                'size' =>0,
-                'tmp_name' => 'C:\wamp64\www\projet3\upload\Chapitre_10.jpg'
+                'name'=>$request->postData('nameImage'),
+                'size' =>filesize($folder),
+                'tmp_name' => $folder
 
             ];
        
-          error_log( "image dans else: ".print_r($image,true).PHP_EOL,3,"../../../tmp/mes-erreurs.log");  
+          error_log( "image dans else if: ".print_r($image,true).PHP_EOL,3,"../../../tmp/mes-erreurs.log");  
             
+                }
+        else 
+        {
+            $image=[
+                'name'=>'generic.jpg',
+                'size' =>0,
+                'tmp_name' => '/generic.jpg'
+
+            ];
         }
         
        error_log( print_r($image,true).PHP_EOL,3,"../../../tmp/mes-erreurs.log");
@@ -175,6 +190,8 @@ class NewsController extends BackController
 
     $this->page->addVar('form', $form->createView());
   }
+    
+    
     public function executeListComment(HTTPRequest $request)
     {
         $this->page->addVar('title', 'Gestion des commentaires');

@@ -47,8 +47,8 @@ class NewsFormBuilder extends FormBuilder
         'size' => 4000000,
         'type' => 'file',
         'validators' => [
-         new ExtensionValidator('ce n est pas une extention Valide', ['.jpg','.png','.bmp']),
-         new SizeValidator('Le fichier est trop gros',4000),
+         new ExtensionValidator('Le fichier doit être de type jpg ou png', ['.jpg','.png']),
+         new SizeValidator('Le fichier est trop lourd',4000),
         ],
        ]))
        ->add(new TextField([
@@ -58,7 +58,7 @@ class NewsFormBuilder extends FormBuilder
         'rows' => 8,
         'cols' => 60,
         'validators' => [
-          new NotNullValidator('Merci de spécifier le contenu du chpitre'),
+          new NotNullValidator('Merci de spécifier le contenu du chapitre'),
         ],
        ]))
         ;

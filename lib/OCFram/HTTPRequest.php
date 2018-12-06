@@ -45,10 +45,10 @@ class HTTPRequest extends ApplicationComponent
  
   public function filesExists($key)
     {
-        $test=$_FILES[$key];
-      error_log( "test dans httprequest: ".print_r($test,true).PHP_EOL,3,"../../../tmp/mes-erreurs.log");
+    $test=$_FILES[$key];
       if(!($test['error']=== 4))
-      {return true;
+      {
+          return true;
       }
     }
   public function filesData($key)

@@ -22,8 +22,6 @@ class FrontendApplication extends Application
 
       $this->httpResponse->setPage($controller->page());
       $content = $this->httpResponse->send();
-      $controller->setToCache($content);
-      exit();
-   
+     
   }
 }

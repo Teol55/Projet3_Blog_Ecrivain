@@ -33,7 +33,7 @@ class NewsManagerPDO extends NewsManager
     
     $requete->execute();
 
-    $this->cache->deleteCache('Frontend_News_index', CacheViews::SUBDIRECTORY);
+   // $this->cache->deleteCache('Frontend_News_index', CacheViews::SUBDIRECTORY);
   }
 
   public function count()
@@ -45,7 +45,7 @@ class NewsManagerPDO extends NewsManager
   {
     $this->dao->exec('DELETE FROM news WHERE id = '.(int) $id);
 
-    $this->deleteCache($id);
+    //$this->deleteCache($id);
   }
 
   public function getList($debut = -1, $limite = -1)
@@ -78,13 +78,13 @@ class NewsManagerPDO extends NewsManager
   public function getUnique($id)
   {
     // On regarde si on a le résultat en cache
-    $cacheName = '';
-    if ($this->cache && ($this->cache instanceof CacheDatas))
-    {
-      $cacheName = $this->getCacheName($id);
-      if ($news = $this->cache->getObjectFromCache($cacheName))
-        return $news;
-    }
+    //$cacheName = '';
+   // if ($this->cache && ($this->cache instanceof CacheDatas))
+    //{
+      //$cacheName = $this->getCacheName($id);
+     // if ($news = $this->cache->getObjectFromCache($cacheName))
+      //  return $news;
+   // }
 
     $requete = $this->dao->prepare('SELECT id, chapitre, titre, contenu, dateAjout, dateModif, nameImage FROM news WHERE id = :id');
     $requete->bindValue(':id', (int) $id, \PDO::PARAM_INT);
@@ -98,8 +98,8 @@ class NewsManagerPDO extends NewsManager
       $news->setDateModif(new \DateTime($news->dateModif()));
 
       // On enregistre la donnée en cache pendant 7 jours
-      if ($cacheName != '')
-        $this->cache->setObjectToCache($cacheName, $news, 24 * 7);
+      //if ($cacheName != '')
+       // $this->cache->setObjectToCache($cacheName, $news, 24 * 7);
 
       return $news;
     }
@@ -119,7 +119,7 @@ class NewsManagerPDO extends NewsManager
     
     $requete->execute();
 
-    $this->deleteCache($news->id());
+    //$this->deleteCache($news->id());
   }
     public function getNewsComment()
     {

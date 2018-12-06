@@ -41,12 +41,12 @@ class CommentsManagerPDO extends CommentsManager
     
     $comment->setId($this->dao->lastInsertId());
 
-    $this->deleteCache($comment->news());
+    //$this->deleteCache($comment->news());
   }
 
   public function delete($id)
   {
-    $this->deleteCache(0, $id);
+    //$this->deleteCache(0, $id);
 
     $this->dao->exec('DELETE FROM comments WHERE id = '.(int) $id);
   }
@@ -55,22 +55,22 @@ class CommentsManagerPDO extends CommentsManager
   {
     $this->dao->exec('DELETE FROM comments WHERE news = '.(int) $news);
 
-    $this->deleteCache($news);
+    //$this->deleteCache($news);
   }
   
   public function getListOf($news)
   {
     // On regarde si on a le résultat en cache
-    $cacheName = '';
-    if ($this->cache && ($this->cache instanceof CacheDatas))
-    {
-      $cacheName = $this->getCacheName($news);
-      if ($comments = $this->cache->getObjectFromCache($cacheName))
-      {
-        echo "RECUPERATION DEPUIS LE CACHE\n";
-        return $comments;
-      }
-    }
+   // $cacheName = '';
+    //if ($this->cache && ($this->cache instanceof CacheDatas))
+   // {
+    //  $cacheName = $this->getCacheName($news);
+     // if ($comments = $this->cache->getObjectFromCache($cacheName))
+     //** {
+     //   echo "RECUPERATION DEPUIS LE CACHE\n";
+      //  return $comments;
+     // }
+   // }
 
     if (!ctype_digit($news))
     {
@@ -91,8 +91,8 @@ class CommentsManagerPDO extends CommentsManager
     }
 
     // On enregistre la donnée en cache pendant 7 jours
-    if ($cacheName != '')
-      $this->cache->setObjectToCache($cacheName, $comments, 24 * 7);
+    //if ($cacheName != '')
+     // $this->cache->setObjectToCache($cacheName, $comments, 24 * 7);
 
     return $comments;
   }
@@ -108,7 +108,7 @@ class CommentsManagerPDO extends CommentsManager
     
     $q->execute();
 
-    $this->deleteCache(0, $comment->id());
+    //$this->deleteCache(0, $comment->id());
   }
 
   public function getNewsId($id)
@@ -150,7 +150,7 @@ class CommentsManagerPDO extends CommentsManager
     
        
     $requete = $this->dao->query($sql);
-    $requete->setFetchMode(\PDO::FETCH_CLASS | \PDO::FETCH_PROPS_LATE, '\Entity\comment');
+    $requete->setFetchMode(\PDO::FETCH_CLASS | \PDO::FETCH_PROPS_LATE, '\Entity\Comment');
     
     $listeAllComments = $requete->fetchAll();
     

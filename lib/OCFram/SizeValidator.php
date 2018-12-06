@@ -17,12 +17,11 @@ class SizeValidator extends Validator
   
   public function isValid($value)
   {
- error_log( "value SizeValidator= " .print_r($value['tmp_name'],true).PHP_EOL,3,"../../../tmp/mes-erreurs.log");
+ 
   $adresse="C:\cache\\evenement.png"  ;  
-$size = filesize($value['tmp_name']);
-  error_log( "Size SizeValidator= " .$size .PHP_EOL,3,"../../../tmp/mes-erreurs.log");
-      
-      if(!($this->maxSize > $size) || !($value['error'] == 2))
+  $size = filesize($value['tmp_name']);
+
+    if(!($this->maxSize > $size) || !($value['error'] == 2))
       {
           return true;
       }
